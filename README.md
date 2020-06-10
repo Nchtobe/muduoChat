@@ -12,7 +12,7 @@
   2. 数据库操作的类封装：
     1) 数据库结构，包含五张表：
     
-   a. User表
+   a. user表
   
   字段名称 | 字段类型 | 字段说明 | 约束 |
   ---|--- | --- | ---
@@ -20,6 +20,38 @@
   name | varchar(50) |用户名 | NOT NULL, UNIQUE
   password | varchar(50) | 用户密码 |NOT NULL
   state | enum('online','offline') |当前登录状态 | DEFAULT 'offline'
+  
+  b. friend表
+  
+  字段名称 | 字段类型 | 字段说明 | 约束 |
+  ---|--- | --- | ---
+  userid | int | 用户id |NOT NULL、联合主键
+  friendid | int | 好友id | NOT NULL、联合主键
+  
+  c. allgroup表
+  
+  字段名称 | 字段类型 | 字段说明 | 约束 |
+  ---|--- | --- | ---
+  id | int | 组id |PRIMARY KEY、AUTO_INCREMENT
+  groupname | varchar(50) |组名称 | NOT NULL, UNIQUE
+  groupdesc | varchar(100) | 组功能描述 |DEFAULT ''
+  
+  d. groupuser表
+  
+  字段名称 | 字段类型 | 字段说明 | 约束 |
+  ---|--- | --- | ---
+  groupid | int | 组id |NOT NULL、联合主键
+  userid | int |组员id | NOT NULL, UNIQUE
+  grouprole | ENUM('creator', 'normal') | 组内角色 |色DEFAULT ‘normal’
+  
+  e. offlinemessage表
+  
+  字段名称 | 字段类型 | 字段说明 | 约束 |
+  ---|--- | --- | ---
+  userid | int | 用户id |NOT NULL
+  message | VARCHAR(500) | 离线消息（存储Json字符串） | NOT NULL
+  
+
     
     
     
