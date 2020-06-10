@@ -12,13 +12,14 @@
   2. 数据库操作的类封装：
     1) 数据库结构，包含五张表：
     
-    a. User表
-    字段名称 | 字段类型 | 字段说明 | 约束 |
-    ---|--- | --- | ---
-    id | int | 用户id |PRIMARY KEY、AUTO_INCREMENT
-    name | varchar(50) |用户名 | NOT NULL, UNIQUE
-    password | varchar(50) | 用户密码 |NOT NULL
-    state | enum('online','offline') |当前登录状态 | DEFAULT 'offline'
+   a. User表
+  
+  字段名称 | 字段类型 | 字段说明 | 约束 |
+  ---|--- | --- | ---
+  id | int | 用户id |PRIMARY KEY、AUTO_INCREMENT
+  name | varchar(50) |用户名 | NOT NULL, UNIQUE
+  password | varchar(50) | 用户密码 |NOT NULL
+  state | enum('online','offline') |当前登录状态 | DEFAULT 'offline'
     
     
     
